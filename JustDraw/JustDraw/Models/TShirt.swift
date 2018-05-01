@@ -21,14 +21,14 @@ class TShirt: Decodable {
     
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
-        case englishName = "englishName"
-        case vietnamName = "vietnamName"
-        case mainImage = "mainImage"
-        case price = "price"
-        case quantity = "quantity"
-        case review = "review"
-        case sold = "sold"
-        case discount = "discount"
+        case englishName = "EnglishName"
+        case vietnamName = "VietNamName"
+        case mainImage = "MainImage"
+        case price = "Price"
+        case quantity = "Quantity"
+        case review = "Review"
+        case sold = "Sold"
+        case discount = "Discount"
     }
     
     // MARK: Constructor

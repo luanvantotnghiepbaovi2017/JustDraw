@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import Firebase
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
 
@@ -16,24 +17,12 @@ class MainViewController: UIViewController {
     // MARK: IBActions
     
     // MARK: Properties
+    private var viewModel: TShirtViewModel!
     
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchProduct()
-    }
-    
-    func fetchProduct() {
-        let database = NRDatabaseProvider<FirebaseEndPoint>()
-        database.request(.getProduct()) { result in
-            switch result {
-            case .success(let response):
-                let snapshot = response.snapshot
-                print(snapshot ?? "Failed to load data")
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        viewModel = TShirtViewModel()
     }
 
     override func didReceiveMemoryWarning() {

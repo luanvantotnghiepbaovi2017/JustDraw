@@ -11,25 +11,16 @@ import Foundation
 // MARK: - NRError
 
 public enum NRError: Error {
-    
     case resultConversion
-    
     case requestMapping
-    
     case nullSnapshot
-    
     case jsonMapping
-    
     case objectDecoding
-    
     case underlying(Error)
-    
 }
 
 // MARK: - LocalizedError
-
 extension NRError: LocalizedError {
-
     public var errorDescription: String? {
         switch self {
         case .resultConversion:

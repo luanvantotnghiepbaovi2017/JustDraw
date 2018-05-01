@@ -32,6 +32,7 @@
 		395CE1A420986EB4004B5212 /* NRStorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19B20986EB4004B5212 /* NRStorageRequest.swift */; };
 		395CE1A7209870E5004B5212 /* FirebaseEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */; };
 		395CE1A92098743D004B5212 /* TShirtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1A82098743D004B5212 /* TShirtViewModel.swift */; };
+		39E811322098B8BB00C2B9C5 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E811312098B8BB00C2B9C5 /* RequestManager.swift */; };
 		BBBFE6D68B8ACCC95639380F /* Pods_JustDrawUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB093AD448A292830F6DD0B8 /* Pods_JustDrawUITests.framework */; };
 		C3A10015A659AEBD5B2A1201 /* Pods_JustDraw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE619FDEACF56C18A2A9C14 /* Pods_JustDraw.framework */; };
 		E0AE675A3BC0598950F47708 /* Pods_JustDrawTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A29B4FBED1593A5404D3CC /* Pods_JustDrawTests.framework */; };
@@ -86,6 +87,7 @@
 		395CE19B20986EB4004B5212 /* NRStorageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRStorageRequest.swift; sourceTree = "<group>"; };
 		395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndPoint.swift; sourceTree = "<group>"; };
 		395CE1A82098743D004B5212 /* TShirtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtViewModel.swift; sourceTree = "<group>"; };
+		39E811312098B8BB00C2B9C5 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		523EDEC460A4D635A5A7FC4F /* Pods-JustDrawUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDrawUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustDrawUITests/Pods-JustDrawUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA09F3DF82735230DA4B54F /* Pods-JustDraw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDraw.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustDraw/Pods-JustDraw.release.xcconfig"; sourceTree = "<group>"; };
 		6EE619FDEACF56C18A2A9C14 /* Pods_JustDraw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDraw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -384,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */,
+				39E811312098B8BB00C2B9C5 /* RequestManager.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				395CE1A320986EB4004B5212 /* NRError.swift in Sources */,
 				395CE176209860D9004B5212 /* TShirt.swift in Sources */,
 				395CE14020985F04004B5212 /* JustDraw.xcdatamodeld in Sources */,
+				39E811322098B8BB00C2B9C5 /* RequestManager.swift in Sources */,
 				395CE19F20986EB4004B5212 /* NRFirebaseTask.swift in Sources */,
 				395CE19D20986EB4004B5212 /* NRFirebaseTarget.swift in Sources */,
 				395CE1A420986EB4004B5212 /* NRStorageRequest.swift in Sources */,
@@ -866,10 +870,7 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -886,10 +887,7 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -906,11 +904,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -928,11 +922,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -949,11 +939,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -970,11 +956,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
