@@ -6,7 +6,26 @@ target 'JustDraw' do
   use_frameworks!
 
   # Pods for JustDraw
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'Moya'
+  pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher'
+  pod 'ReachabilitySwift'
+  pod 'PKHUD'
   pod 'Firebase/Core'
+  pod 'Fabric'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Core'
+  pod 'Crashlytics'
+  pod 'CarbonKit'
+  pod 'SnapKit'
+  pod 'RealmSwift'
+  pod 'DropDown'
+  pod 'youtube-ios-player-helper'
+  pod 'Device'
+  pod 'FBSDKCoreKit'
 
   target 'JustDrawTests' do
     inherit! :search_paths
