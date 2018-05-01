@@ -4,6 +4,8 @@
 target 'JustDraw' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
+  # ignore all warnings from all pods
+  inhibit_all_warnings!
 
   # Pods for JustDraw
   pod 'RxSwift'
@@ -18,6 +20,8 @@ target 'JustDraw' do
   pod 'Fabric'
   pod 'Firebase/Crash'
   pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
   pod 'Crashlytics'
   pod 'CarbonKit'
   pod 'SnapKit'

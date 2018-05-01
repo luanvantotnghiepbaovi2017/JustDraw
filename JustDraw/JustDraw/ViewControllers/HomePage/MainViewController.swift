@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainViewController: UIViewController {
 
@@ -19,12 +20,24 @@ class MainViewController: UIViewController {
     // MARK: Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        fetchProduct()
+    }
+    
+    func fetchProduct() {
+        let database = NRDatabaseProvider<FirebaseEndPoint>()
+        database.request(.getProduct()) { result in
+            switch result {
+            case .success(let response):
+                let snapshot = response.snapshot
+                print(snapshot ?? "Failed to load data")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("didReceiveMemoryWarning - MainViewController")
     }
-    
 }
