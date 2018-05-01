@@ -28,21 +28,22 @@ class TShirtViewModel: TShirtViewModelType {
         activityIndicator = ActivityIndicator()
         isLoading = activityIndicator.asObservable()
         disposeBag = DisposeBag()
-        fetchProducts()
+        fetchProductsFromFirebase()
     }
     
     /// Get Methods
     func getProducts() -> Variable<[TShirt]> {
         return products
     }
-    private func fetchProducts() {
+    private func fetchProductsFromFirebase() {
         RequestManager
             .shared
             .fetchProduct()
             .timeout(30, scheduler: MainScheduler.instance)
             .trackActivity(activityIndicator)
-            .subscribe(onNext: { (products) in
-                print(products)
+            .subscribe(onNext: { [weak self] (products) in
+                guard let strongSelf = self else { return }
+                strongSelf.products.value = products
             }, onError: { (error) in
                 print(error.localizedDescription)
             })
