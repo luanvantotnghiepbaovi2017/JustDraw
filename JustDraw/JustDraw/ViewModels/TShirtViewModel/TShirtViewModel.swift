@@ -12,6 +12,7 @@ import RxSwift
 protocol TShirtViewModelType: class {
     var isLoading: Observable<Bool> { get }
     func getProducts() -> Variable<[TShirt]>
+    func setProducts(products: [TShirt])
 }
 
 class TShirtViewModel: TShirtViewModelType {
@@ -43,10 +44,15 @@ class TShirtViewModel: TShirtViewModelType {
             .trackActivity(activityIndicator)
             .subscribe(onNext: { [weak self] (products) in
                 guard let strongSelf = self else { return }
-                strongSelf.products.value = products
+                strongSelf.setProducts(products: products)
             }, onError: { (error) in
                 print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
+    }
+    
+    /// Set Methods
+    func setProducts(products: [TShirt]) {
+        self.products.value = products
     }
 }
