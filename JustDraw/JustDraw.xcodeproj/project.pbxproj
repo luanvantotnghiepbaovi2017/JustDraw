@@ -15,6 +15,12 @@
 		395CE15020985F05004B5212 /* JustDrawTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE14F20985F05004B5212 /* JustDrawTests.swift */; };
 		395CE15B20985F05004B5212 /* JustDrawUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE15A20985F05004B5212 /* JustDrawUITests.swift */; };
 		395CE16F20985F6C004B5212 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 395CE16E20985F6C004B5212 /* GoogleService-Info.plist */; };
+		395CE176209860D9004B5212 /* TShirt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE175209860D9004B5212 /* TShirt.swift */; };
+		395CE17820986116004B5212 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE17720986116004B5212 /* MainViewController.swift */; };
+		395CE17A2098613F004B5212 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1792098613F004B5212 /* CartViewController.swift */; };
+		395CE17D2098644D004B5212 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE17C2098644D004B5212 /* Constant.swift */; };
+		395CE17F209864F6004B5212 /* TShirtDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395CE17E209864F6004B5212 /* TShirtDetail.storyboard */; };
+		395CE18A209865AB004B5212 /* TShirtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE189209865AB004B5212 /* TShirtViewModel.swift */; };
 		BBBFE6D68B8ACCC95639380F /* Pods_JustDrawUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB093AD448A292830F6DD0B8 /* Pods_JustDrawUITests.framework */; };
 		C3A10015A659AEBD5B2A1201 /* Pods_JustDraw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE619FDEACF56C18A2A9C14 /* Pods_JustDraw.framework */; };
 		E0AE675A3BC0598950F47708 /* Pods_JustDrawTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A29B4FBED1593A5404D3CC /* Pods_JustDrawTests.framework */; };
@@ -52,6 +58,12 @@
 		395CE15A20985F05004B5212 /* JustDrawUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustDrawUITests.swift; sourceTree = "<group>"; };
 		395CE15C20985F05004B5212 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		395CE16E20985F6C004B5212 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		395CE175209860D9004B5212 /* TShirt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirt.swift; sourceTree = "<group>"; };
+		395CE17720986116004B5212 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		395CE1792098613F004B5212 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		395CE17C2098644D004B5212 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		395CE17E209864F6004B5212 /* TShirtDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TShirtDetail.storyboard; sourceTree = "<group>"; };
+		395CE189209865AB004B5212 /* TShirtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtViewModel.swift; sourceTree = "<group>"; };
 		523EDEC460A4D635A5A7FC4F /* Pods-JustDrawUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDrawUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustDrawUITests/Pods-JustDrawUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA09F3DF82735230DA4B54F /* Pods-JustDraw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDraw.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustDraw/Pods-JustDraw.release.xcconfig"; sourceTree = "<group>"; };
 		6EE619FDEACF56C18A2A9C14 /* Pods_JustDraw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustDraw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +131,7 @@
 				395CE16820985F1B004B5212 /* Application */,
 				395CE16B20985F46004B5212 /* Shared */,
 				395CE16A20985F37004B5212 /* StoryBoards */,
+				395CE1842098654F004B5212 /* Views */,
 				395CE16920985F24004B5212 /* ViewControllers */,
 				395CE17020986037004B5212 /* Models */,
 				395CE17120986041004B5212 /* ViewModels */,
@@ -159,6 +172,10 @@
 		395CE16920985F24004B5212 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				395CE18220986526004B5212 /* HomePage */,
+				395CE1832098652F004B5212 /* DetailPage */,
+				395CE1812098651E004B5212 /* UserProfile */,
+				395CE18020986515004B5212 /* Payment */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -167,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				395CE13B20985F04004B5212 /* Main.storyboard */,
+				395CE17E209864F6004B5212 /* TShirtDetail.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -174,6 +192,7 @@
 		395CE16B20985F46004B5212 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				395CE17B20986440004B5212 /* Constant */,
 				395CE16C20985F4E004B5212 /* Resources */,
 			);
 			path = Shared;
@@ -198,6 +217,7 @@
 		395CE17020986037004B5212 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				395CE175209860D9004B5212 /* TShirt.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -205,8 +225,102 @@
 		395CE17120986041004B5212 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				395CE18C209865BD004B5212 /* UserProfileViewModel */,
+				395CE18B209865B3004B5212 /* PaymentViewModel */,
+				395CE18820986596004B5212 /* TShirtViewModel */,
+				395CE18720986589004B5212 /* HomeViewModel */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		395CE17B20986440004B5212 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				395CE17C2098644D004B5212 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		395CE18020986515004B5212 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				395CE1792098613F004B5212 /* CartViewController.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		395CE1812098651E004B5212 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		395CE18220986526004B5212 /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				395CE17720986116004B5212 /* MainViewController.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		395CE1832098652F004B5212 /* DetailPage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DetailPage;
+			sourceTree = "<group>";
+		};
+		395CE1842098654F004B5212 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				395CE1852098655D004B5212 /* TableViewCell */,
+				395CE1862098656D004B5212 /* CollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		395CE1852098655D004B5212 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		395CE1862098656D004B5212 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		395CE18720986589004B5212 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
+		395CE18820986596004B5212 /* TShirtViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				395CE189209865AB004B5212 /* TShirtViewModel.swift */,
+			);
+			path = TShirtViewModel;
+			sourceTree = "<group>";
+		};
+		395CE18B209865B3004B5212 /* PaymentViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PaymentViewModel;
+			sourceTree = "<group>";
+		};
+		395CE18C209865BD004B5212 /* UserProfileViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserProfileViewModel;
 			sourceTree = "<group>";
 		};
 		3D20ECF4BBE89A20CAA28FDE /* Pods */ = {
@@ -340,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395CE17F209864F6004B5212 /* TShirtDetail.storyboard in Resources */,
 				395CE14520985F05004B5212 /* LaunchScreen.storyboard in Resources */,
 				395CE16F20985F6C004B5212 /* GoogleService-Info.plist in Resources */,
 				395CE14220985F05004B5212 /* Assets.xcassets in Resources */,
@@ -445,8 +560,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395CE18A209865AB004B5212 /* TShirtViewModel.swift in Sources */,
+				395CE176209860D9004B5212 /* TShirt.swift in Sources */,
 				395CE14020985F04004B5212 /* JustDraw.xcdatamodeld in Sources */,
+				395CE17A2098613F004B5212 /* CartViewController.swift in Sources */,
 				395CE13820985F04004B5212 /* AppDelegate.swift in Sources */,
+				395CE17820986116004B5212 /* MainViewController.swift in Sources */,
+				395CE17D2098644D004B5212 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
