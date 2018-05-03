@@ -11,21 +11,22 @@ import RxSwift
 
 protocol TShirtViewModelType: class {
     var isLoading: Observable<Bool> { get }
-    func getProducts() -> Variable<[TShirt]>
-    func setProducts(products: [TShirt])
+    func getProducts() -> Variable<[String: TShirt]>
+    func setProducts(products: [String: TShirt])
+    func getProduct(sku: String) -> TShirt?
 }
 
 class TShirtViewModel: TShirtViewModelType {
     // MARK: Properties
     internal var isLoading: Observable<Bool>
     private var activityIndicator: ActivityIndicator!
-    private var products: Variable<[TShirt]>!
+    private var products: Variable<[String: TShirt]>!
     private let disposeBag: DisposeBag!
     
     // MARK: Methods
     /// Constructor
     init() {
-        products = Variable<[TShirt]>([])
+        products = Variable<[String: TShirt]>([:])
         activityIndicator = ActivityIndicator()
         isLoading = activityIndicator.asObservable()
         disposeBag = DisposeBag()
@@ -33,9 +34,20 @@ class TShirtViewModel: TShirtViewModelType {
     }
     
     /// Get Methods
-    func getProducts() -> Variable<[TShirt]> {
+    func getProducts() -> Variable<[String: TShirt]> {
         return products
     }
+    
+    func getProduct(sku: String) -> TShirt? {
+        if self.products.value.count < 0 {
+            return nil
+        }
+        if let product = self.products.value[sku] {
+            return product
+        }
+        return nil
+    }
+    
     private func fetchProductsFromFirebase() {
         RequestManager
             .shared
@@ -52,7 +64,7 @@ class TShirtViewModel: TShirtViewModelType {
     }
     
     /// Set Methods
-    func setProducts(products: [TShirt]) {
+    func setProducts(products: [String: TShirt]) {
         self.products.value = products
     }
 }

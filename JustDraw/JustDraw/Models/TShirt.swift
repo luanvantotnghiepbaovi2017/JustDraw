@@ -10,6 +10,7 @@ import Foundation
 
 class TShirt: Decodable {
     // MARK: Properties
+    var sku: String = ""
     var englishName: String = ""
     var vietnamName: String = ""
     var mainImage: String = ""
@@ -21,6 +22,7 @@ class TShirt: Decodable {
     
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
+        case sku = "SKU"
         case englishName = "EnglishName"
         case vietnamName = "VietNamName"
         case mainImage = "MainImage"
@@ -36,6 +38,7 @@ class TShirt: Decodable {
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        sku = try container.decodeIfPresent(String.self, forKey: .sku) ?? ""
         englishName = try container.decodeIfPresent(String.self, forKey: .englishName) ?? ""
         vietnamName = try container.decodeIfPresent(String.self, forKey: .vietnamName) ?? ""
         mainImage = try container.decodeIfPresent(String.self, forKey: .mainImage) ?? ""
