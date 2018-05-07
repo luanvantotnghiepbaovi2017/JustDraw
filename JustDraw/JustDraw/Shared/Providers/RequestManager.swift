@@ -15,19 +15,19 @@ class RequestManager {
 }
 
 extension RequestManager {
-    func fetchProduct() -> Observable<[String: TShirt]> {
+    func fetchProduct() -> Observable<[Product]> {
         return Observable.create { [weak self] observer in
             self?.database.request(.getProduct()) { result in
                 switch result {
                 case .success(let response):
-                    guard let snapshot = response.snapshot else { return observer.onNext([:]) }
-                    guard let value = snapshot.value as? [String: Any] else { return observer.onNext([:]) }
+                    guard let snapshot = response.snapshot else { return observer.onNext([]) }
+                    guard let value = snapshot.value as? [String: Any] else { return observer.onNext([]) }
                     do {
-                        var products: [String: TShirt] = [String: TShirt]()
+                        var products: [Product] = [Product]()
                         for item in value {
                             let jsonData = try JSONSerialization.data(withJSONObject: item.value, options: [])
                             let tshirt = try JSONDecoder().decode(TShirt.self, from: jsonData)
-                            products[tshirt.sku] = tshirt
+                            products.append(tshirt)
                         }
                         observer.onNext(products)
                     } catch let error {

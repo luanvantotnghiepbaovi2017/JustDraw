@@ -31,7 +31,12 @@
 		395CE1A320986EB4004B5212 /* NRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19A20986EB4004B5212 /* NRError.swift */; };
 		395CE1A420986EB4004B5212 /* NRStorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19B20986EB4004B5212 /* NRStorageRequest.swift */; };
 		395CE1A7209870E5004B5212 /* FirebaseEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */; };
-		395CE1A92098743D004B5212 /* TShirtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1A82098743D004B5212 /* TShirtViewModel.swift */; };
+		39E4098E209E139600FE2F13 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4098D209E139600FE2F13 /* PinterestLayout.swift */; };
+		39E40991209EE9E300FE2F13 /* TShirtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4098F209EE9E300FE2F13 /* TShirtCell.swift */; };
+		39E40992209EE9E300FE2F13 /* TShirtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E40990209EE9E300FE2F13 /* TShirtCell.xib */; };
+		39E40994209EF44900FE2F13 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E40993209EF44900FE2F13 /* HomeViewModel.swift */; };
+		39E40996209EF91500FE2F13 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E40995209EF91500FE2F13 /* Product.swift */; };
+		39E40999209F026700FE2F13 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E40998209F026700FE2F13 /* UIView.swift */; };
 		39E811322098B8BB00C2B9C5 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E811312098B8BB00C2B9C5 /* RequestManager.swift */; };
 		BBBFE6D68B8ACCC95639380F /* Pods_JustDrawUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB093AD448A292830F6DD0B8 /* Pods_JustDrawUITests.framework */; };
 		C3A10015A659AEBD5B2A1201 /* Pods_JustDraw.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE619FDEACF56C18A2A9C14 /* Pods_JustDraw.framework */; };
@@ -86,7 +91,12 @@
 		395CE19A20986EB4004B5212 /* NRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRError.swift; sourceTree = "<group>"; };
 		395CE19B20986EB4004B5212 /* NRStorageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRStorageRequest.swift; sourceTree = "<group>"; };
 		395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndPoint.swift; sourceTree = "<group>"; };
-		395CE1A82098743D004B5212 /* TShirtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtViewModel.swift; sourceTree = "<group>"; };
+		39E4098D209E139600FE2F13 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		39E4098F209EE9E300FE2F13 /* TShirtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtCell.swift; sourceTree = "<group>"; };
+		39E40990209EE9E300FE2F13 /* TShirtCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TShirtCell.xib; sourceTree = "<group>"; };
+		39E40993209EF44900FE2F13 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		39E40995209EF91500FE2F13 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		39E40998209F026700FE2F13 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		39E811312098B8BB00C2B9C5 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		523EDEC460A4D635A5A7FC4F /* Pods-JustDrawUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDrawUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustDrawUITests/Pods-JustDrawUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA09F3DF82735230DA4B54F /* Pods-JustDraw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustDraw.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustDraw/Pods-JustDraw.release.xcconfig"; sourceTree = "<group>"; };
@@ -219,6 +229,7 @@
 				395CE1A5209870BE004B5212 /* Providers */,
 				395CE19120986E95004B5212 /* Libraries */,
 				395CE18D20986670004B5212 /* Services */,
+				39E40997209F024600FE2F13 /* Extensions */,
 				395CE17B20986440004B5212 /* Constant */,
 				395CE16C20985F4E004B5212 /* Resources */,
 			);
@@ -245,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				395CE175209860D9004B5212 /* TShirt.swift */,
+				39E40995209EF91500FE2F13 /* Product.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 		395CE1842098654F004B5212 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				39E4098C209E135E00FE2F13 /* CustomViews */,
 				395CE1852098655D004B5212 /* TableViewCell */,
 				395CE1862098656D004B5212 /* CollectionViewCell */,
 			);
@@ -317,6 +330,8 @@
 		395CE1862098656D004B5212 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				39E4098F209EE9E300FE2F13 /* TShirtCell.swift */,
+				39E40990209EE9E300FE2F13 /* TShirtCell.xib */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -324,6 +339,7 @@
 		395CE18720986589004B5212 /* HomeViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				39E40993209EF44900FE2F13 /* HomeViewModel.swift */,
 			);
 			path = HomeViewModel;
 			sourceTree = "<group>";
@@ -331,7 +347,6 @@
 		395CE18820986596004B5212 /* TShirtViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				395CE1A82098743D004B5212 /* TShirtViewModel.swift */,
 			);
 			path = TShirtViewModel;
 			sourceTree = "<group>";
@@ -389,6 +404,22 @@
 				39E811312098B8BB00C2B9C5 /* RequestManager.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		39E4098C209E135E00FE2F13 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				39E4098D209E139600FE2F13 /* PinterestLayout.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		39E40997209F024600FE2F13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				39E40998209F026700FE2F13 /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		3D20ECF4BBE89A20CAA28FDE /* Pods */ = {
@@ -523,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				395CE17F209864F6004B5212 /* TShirtDetail.storyboard in Resources */,
+				39E40992209EE9E300FE2F13 /* TShirtCell.xib in Resources */,
 				395CE14520985F05004B5212 /* LaunchScreen.storyboard in Resources */,
 				395CE16F20985F6C004B5212 /* GoogleService-Info.plist in Resources */,
 				395CE14220985F05004B5212 /* Assets.xcassets in Resources */,
@@ -674,13 +706,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E4098E209E139600FE2F13 /* PinterestLayout.swift in Sources */,
+				39E40994209EF44900FE2F13 /* HomeViewModel.swift in Sources */,
 				395CE1A220986EB4004B5212 /* NRStorageResponse.swift in Sources */,
 				395CE1A7209870E5004B5212 /* FirebaseEndPoint.swift in Sources */,
-				395CE1A92098743D004B5212 /* TShirtViewModel.swift in Sources */,
 				395CE1A320986EB4004B5212 /* NRError.swift in Sources */,
+				39E40996209EF91500FE2F13 /* Product.swift in Sources */,
 				395CE176209860D9004B5212 /* TShirt.swift in Sources */,
+				39E40999209F026700FE2F13 /* UIView.swift in Sources */,
 				395CE14020985F04004B5212 /* JustDraw.xcdatamodeld in Sources */,
 				39E811322098B8BB00C2B9C5 /* RequestManager.swift in Sources */,
+				39E40991209EE9E300FE2F13 /* TShirtCell.swift in Sources */,
 				395CE19F20986EB4004B5212 /* NRFirebaseTask.swift in Sources */,
 				395CE19D20986EB4004B5212 /* NRFirebaseTarget.swift in Sources */,
 				395CE1A420986EB4004B5212 /* NRStorageRequest.swift in Sources */,
@@ -870,7 +906,10 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -887,7 +926,10 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -904,7 +946,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -922,7 +968,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -939,7 +989,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -956,7 +1010,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
