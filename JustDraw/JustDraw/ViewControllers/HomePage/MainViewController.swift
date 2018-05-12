@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
+import PKHUD
 
 class MainViewController: UIViewController {
     
@@ -27,11 +27,12 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         viewModel = HomeViewModel()
         _registerCell()
-       // _setUpCollectionViewLayout()
+        _setUpCollectionViewLayout()
         _bindingDataToCollectionView()
     }
     
     private func _setUpCollectionViewLayout() {
+        collectionViewProducts.dataSource = self
         collectionViewProducts.contentInset = UIEdgeInsetsMake(12, 4, 12, 4)
         if let layout = collectionViewProducts.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
@@ -44,26 +45,41 @@ class MainViewController: UIViewController {
     }
     
     private func _bindingDataToCollectionView() {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<ProductSectionModel>(
-            configureCell: {(dataSource, collectionView, indexPath, element) in
-                let tshirtCell = collectionView.dequeueReusableCell(withReuseIdentifier: TShirtCell.nibName, for: indexPath) as! TShirtCell
-                return tshirtCell
-        })
-        
         viewModel
-            .getProducts()
-            .asObservable()
-            .debug()
-            .asDriver(onErrorJustReturn: [])
-            .drive(collectionViewProducts
-                .rx
-                .items(dataSource: dataSource))
+            .isLoading
+            .subscribe (onNext: { [weak self] visible in
+                guard let strongSelf = self else { return }
+                PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
+                visible ? PKHUD.sharedHUD.show(onView: strongSelf.collectionViewProducts) : PKHUD.sharedHUD.hide()
+                if !visible {
+                    strongSelf.collectionViewProducts.reloadData()
+                }
+            })
             .disposed(by: disposeBag)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         print("didReceiveMemoryWarning - MainViewController")
+    }
+}
+
+// MARK: Extension - UICollectionViewDataSource
+extension MainViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.getCountOfProducts()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let tshirtCell = collectionView.dequeueReusableCell(withReuseIdentifier: TShirtCell.nibName, for: indexPath) as! TShirtCell
+        if let tshirt = viewModel.getProduct(at: indexPath) as? TShirt {
+            tshirtCell.tshirtViewModel = TShirtViewModel(tshirt: tshirt)
+        }
+        return tshirtCell
     }
 }
 

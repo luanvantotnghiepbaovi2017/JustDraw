@@ -34,10 +34,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w6f-iG-juH">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w6f-iG-juH">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewLayout key="collectionViewLayout" id="9jf-Dc-v2K" customClass="PinterestLayout" customModule="JustDraw" customModuleProvider="target"/>
+                                <collectionViewLayout key="collectionViewLayout" id="FnC-LL-C28" customClass="PinterestLayout" customModule="JustDraw" customModuleProvider="target"/>
                                 <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="88s-5u-UIC" id="UHI-mQ-tye"/>

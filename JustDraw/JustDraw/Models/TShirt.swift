@@ -9,7 +9,6 @@
 import Foundation
 
 class TShirt: Product, Decodable {
-    
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {
         case sku = "SKU"
@@ -33,7 +32,7 @@ class TShirt: Product, Decodable {
         englishName = try container.decodeIfPresent(String.self, forKey: .englishName) ?? ""
         vietnamName = try container.decodeIfPresent(String.self, forKey: .vietnamName) ?? ""
         mainImage = try container.decodeIfPresent(String.self, forKey: .mainImage) ?? ""
-        price = try container.decodeIfPresent(String.self, forKey: .price) ?? ""
+        price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0.0
         quantity = try container.decodeIfPresent(Int.self, forKey: .quantity) ?? 0
         review = try container.decodeIfPresent(Int.self, forKey: .review) ?? 0
         sold = try container.decodeIfPresent(Int.self, forKey: .sold) ?? 0

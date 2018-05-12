@@ -11,8 +11,9 @@ import RxSwift
 
 protocol HomeViewModelType: class {
     var isLoading: Observable<Bool> { get }
-    func getProducts() -> Variable<[ProductSectionModel]>
-    func setProducts(products: [ProductSectionModel])
+    func getProducts() -> Variable<[Product]>
+    func getCountOfProducts() -> Int
+    func setProducts(products: [Product])
     func getProduct(at indexPath: IndexPath) -> Product?
 }
 
@@ -20,13 +21,13 @@ class HomeViewModel: HomeViewModelType {
     // MARK: Properties
     internal var isLoading: Observable<Bool>
     private var activityIndicator: ActivityIndicator!
-    private var products: Variable<[ProductSectionModel]>!
+    private var products: Variable<[Product]>!
     private let disposeBag: DisposeBag!
     
     // MARK: Methods
     /// Constructor
     init() {
-        products = Variable<[ProductSectionModel]>([])
+        products = Variable<[Product]>([])
         activityIndicator = ActivityIndicator()
         isLoading = activityIndicator.asObservable()
         disposeBag = DisposeBag()
@@ -34,18 +35,26 @@ class HomeViewModel: HomeViewModelType {
     }
     
     /// Get Methods
-    func getProducts() -> Variable<[ProductSectionModel]> {
+    func getProducts() -> Variable<[Product]> {
         return products
     }
     
     func getProduct(at indexPath: IndexPath) -> Product? {
-        if self.products.value.isEmpty {
+        if _isProductsEmpty() {
             return nil
         }
-        if self.products.value[indexPath.section].items.isEmpty {
-            return nil
+        return self.products.value[indexPath.item]
+    }
+    
+    func getCountOfProducts() -> Int {
+        if _isProductsEmpty() {
+            return 0
         }
-        return self.products.value[indexPath.section].items[indexPath.item]
+        return self.products.value.count
+    }
+    
+    private func _isProductsEmpty() -> Bool {
+        return self.products.value.isEmpty
     }
     
     private func fetchProductsFromFirebase() {
@@ -56,8 +65,7 @@ class HomeViewModel: HomeViewModelType {
             .trackActivity(activityIndicator)
             .subscribe(onNext: { [weak self] (products) in
                 guard let strongSelf = self else { return }
-                let productSectionModel = ProductSectionModel(items: products)
-                strongSelf.setProducts(products: [productSectionModel])
+                strongSelf.setProducts(products: products)
                 }, onError: { (error) in
                     print(error.localizedDescription)
             })
@@ -65,7 +73,7 @@ class HomeViewModel: HomeViewModelType {
     }
     
     /// Set Methods
-    func setProducts(products: [ProductSectionModel]) {
+    func setProducts(products: [Product]) {
         self.products.value = products
     }
 }

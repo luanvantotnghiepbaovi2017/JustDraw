@@ -31,6 +31,7 @@
 		395CE1A320986EB4004B5212 /* NRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19A20986EB4004B5212 /* NRError.swift */; };
 		395CE1A420986EB4004B5212 /* NRStorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19B20986EB4004B5212 /* NRStorageRequest.swift */; };
 		395CE1A7209870E5004B5212 /* FirebaseEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */; };
+		399B809520A6E1DB00EE747F /* TShirtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399B809420A6E1DB00EE747F /* TShirtViewModel.swift */; };
 		39E4098E209E139600FE2F13 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4098D209E139600FE2F13 /* PinterestLayout.swift */; };
 		39E40991209EE9E300FE2F13 /* TShirtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4098F209EE9E300FE2F13 /* TShirtCell.swift */; };
 		39E40992209EE9E300FE2F13 /* TShirtCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39E40990209EE9E300FE2F13 /* TShirtCell.xib */; };
@@ -91,6 +92,7 @@
 		395CE19A20986EB4004B5212 /* NRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRError.swift; sourceTree = "<group>"; };
 		395CE19B20986EB4004B5212 /* NRStorageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRStorageRequest.swift; sourceTree = "<group>"; };
 		395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndPoint.swift; sourceTree = "<group>"; };
+		399B809420A6E1DB00EE747F /* TShirtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtViewModel.swift; sourceTree = "<group>"; };
 		39E4098D209E139600FE2F13 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		39E4098F209EE9E300FE2F13 /* TShirtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtCell.swift; sourceTree = "<group>"; };
 		39E40990209EE9E300FE2F13 /* TShirtCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TShirtCell.xib; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 		395CE18820986596004B5212 /* TShirtViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				399B809420A6E1DB00EE747F /* TShirtViewModel.swift */,
 			);
 			path = TShirtViewModel;
 			sourceTree = "<group>";
@@ -644,6 +647,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/iso4217/iso4217.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper/youtube_ios_player_helper.framework",
@@ -672,6 +676,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iso4217.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/youtube_ios_player_helper.framework",
@@ -708,6 +713,7 @@
 			files = (
 				39E4098E209E139600FE2F13 /* PinterestLayout.swift in Sources */,
 				39E40994209EF44900FE2F13 /* HomeViewModel.swift in Sources */,
+				399B809520A6E1DB00EE747F /* TShirtViewModel.swift in Sources */,
 				395CE1A220986EB4004B5212 /* NRStorageResponse.swift in Sources */,
 				395CE1A7209870E5004B5212 /* FirebaseEndPoint.swift in Sources */,
 				395CE1A320986EB4004B5212 /* NRError.swift in Sources */,
@@ -906,10 +912,7 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -926,10 +929,7 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -946,11 +946,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -968,11 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -989,11 +981,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1010,11 +998,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

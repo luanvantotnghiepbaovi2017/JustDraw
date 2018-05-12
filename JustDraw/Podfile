@@ -30,6 +30,7 @@ target 'JustDraw' do
   pod 'youtube-ios-player-helper'
   pod 'Device'
   pod 'FBSDKCoreKit'
+  pod 'iso4217'
 
   target 'JustDrawTests' do
     inherit! :search_paths

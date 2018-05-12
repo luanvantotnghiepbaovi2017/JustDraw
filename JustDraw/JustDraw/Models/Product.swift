@@ -7,18 +7,6 @@
 //
 
 import Foundation
-import RxDataSources
-
-struct ProductSectionModel {
-    var items: [Product] = [Product]()
-}
-
-extension ProductSectionModel: SectionModelType {
-    init(original: ProductSectionModel, items: [Product]) {
-        self = original
-        self.items = items
-    }
-}
 
 class Product {
     // MARK: Properties
@@ -26,9 +14,10 @@ class Product {
     var englishName: String = ""
     var vietnamName: String = ""
     var mainImage: String = ""
-    var price: String = ""
+    var price: Double = 0.0
     var quantity: Int = 0
     var review: Int = 0
     var sold: Int = 0
     var discount: Int = 0
+    var storeAddress: String = "Hồ Chí Minh"
 }
