@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
             .subscribe (onNext: { [weak self] visible in
                 guard let strongSelf = self else { return }
                 PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
-                visible ? PKHUD.sharedHUD.show(onView: strongSelf.collectionViewProducts) : PKHUD.sharedHUD.hide()
+                visible ? PKHUD.sharedHUD.show() : PKHUD.sharedHUD.hide()
                 if !visible {
                     strongSelf.collectionViewProducts.reloadData()
                 }

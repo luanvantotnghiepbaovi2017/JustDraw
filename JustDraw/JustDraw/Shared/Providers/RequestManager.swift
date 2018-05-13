@@ -36,8 +36,10 @@ extension RequestManager {
                 case .failure(let error):
                     observer.onError(error)
                 }
+                observer.onCompleted()
             }
-            return Disposables.create()
+            return Disposables.create {
+            }
         }
     }
 }

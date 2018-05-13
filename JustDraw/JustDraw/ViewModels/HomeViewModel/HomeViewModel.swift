@@ -53,6 +53,11 @@ class HomeViewModel: HomeViewModelType {
         return self.products.value.count
     }
     
+    /// Set Methods
+    func setProducts(products: [Product]) {
+        self.products.value = products
+    }
+    
     private func _isProductsEmpty() -> Bool {
         return self.products.value.isEmpty
     }
@@ -70,10 +75,5 @@ class HomeViewModel: HomeViewModelType {
                     print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
-    }
-    
-    /// Set Methods
-    func setProducts(products: [Product]) {
-        self.products.value = products
     }
 }
