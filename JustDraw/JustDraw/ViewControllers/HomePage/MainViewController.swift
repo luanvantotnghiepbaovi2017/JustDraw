@@ -33,6 +33,7 @@ class MainViewController: UIViewController {
     
     private func _setUpCollectionViewLayout() {
         collectionViewProducts.dataSource = self
+        //        collectionViewProducts.delegate = self
         collectionViewProducts.contentInset = UIEdgeInsetsMake(12, 4, 12, 4)
         if let layout = collectionViewProducts.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
@@ -74,12 +75,14 @@ extension MainViewController: UICollectionViewDataSource {
         return viewModel.getCountOfProducts()
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let tshirtCell = collectionView.dequeueReusableCell(withReuseIdentifier: TShirtCell.nibName, for: indexPath) as! TShirtCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
         if let tshirt = viewModel.getProduct(at: indexPath) as? TShirt {
+            let tshirtCell = collectionView.dequeueReusableCell(withReuseIdentifier: TShirtCell.nibName, for: indexPath) as! TShirtCell
             tshirtCell.tshirtViewModel = TShirtViewModel(tshirt: tshirt)
+            return tshirtCell
         }
-        return tshirtCell
+        return UICollectionViewCell()
     }
 }
 

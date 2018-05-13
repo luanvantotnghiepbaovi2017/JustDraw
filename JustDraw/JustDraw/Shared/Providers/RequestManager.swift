@@ -38,8 +38,7 @@ extension RequestManager {
                 }
                 observer.onCompleted()
             }
-            return Disposables.create {
-            }
+            return Disposables.create()
         }
     }
 }

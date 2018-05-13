@@ -6,7 +6,7 @@
 //  Copyright © 2018 TranQuocBao. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class TShirt: Product, Decodable {
     // MARK: CodingKeys
@@ -15,6 +15,7 @@ class TShirt: Product, Decodable {
         case englishName = "EnglishName"
         case vietnamName = "VietNamName"
         case mainImage = "MainImage"
+        case mainImageHeight = "MainImageHeight"
         case price = "Price"
         case quantity = "Quantity"
         case review = "Review"
@@ -32,6 +33,7 @@ class TShirt: Product, Decodable {
         englishName = try container.decodeIfPresent(String.self, forKey: .englishName) ?? ""
         vietnamName = try container.decodeIfPresent(String.self, forKey: .vietnamName) ?? ""
         mainImage = try container.decodeIfPresent(String.self, forKey: .mainImage) ?? ""
+        mainImageHeight = try container.decodeIfPresent(CGFloat.self, forKey: .mainImageHeight) ?? 0.0
         price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0.0
         quantity = try container.decodeIfPresent(Int.self, forKey: .quantity) ?? 0
         review = try container.decodeIfPresent(Int.self, forKey: .review) ?? 0
