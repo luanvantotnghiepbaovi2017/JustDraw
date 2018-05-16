@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Helper {
-    func height(for text: String, with font: UIFont, width: CGFloat) -> CGFloat
+    class func height(`for` text: String, `with` font: UIFont, width: CGFloat) -> CGFloat
     {
         let nsstring = NSString(string: text)
         let maxHeight = CGFloat(64.0)

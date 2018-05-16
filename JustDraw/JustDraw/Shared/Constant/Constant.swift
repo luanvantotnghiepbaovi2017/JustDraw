@@ -16,4 +16,10 @@ struct Constant {
         static let AvenirNextMedium15: UIFont = UIFont(name: "AvenirNext-Medium", size: 15) ?? UIFont.systemFont(ofSize: 15)
         static let AvenirNextBold18: UIFont = UIFont(name: "AvenirNext-Bold", size: 18) ?? UIFont.systemFont(ofSize: 18)
     }
+    struct CollectionView {
+        struct Home {
+            static let numberOfColumns: CGFloat = 2.0
+            static var contentWidth: CGFloat = 0.0
+        }
+    }
 }

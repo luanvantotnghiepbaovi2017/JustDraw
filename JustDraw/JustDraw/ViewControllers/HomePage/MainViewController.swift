@@ -23,10 +23,6 @@ class MainViewController: UIViewController {
     // MARK: Properties
     private var viewModel: HomeViewModel!
     private var disposeBag: DisposeBag = DisposeBag()
-    private struct CollectionViewSettings {
-        static let topPadding8: CGFloat = 8.0
-        static let topPadding16: CGFloat = 16.0
-    }
     
     // MARK: Methods
     override func viewDidLoad() {
@@ -95,7 +91,7 @@ extension MainViewController: UICollectionViewDataSource {
 // MARK: Extension - PinterestLayoutDelegate
 extension MainViewController: PinterestLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
-        if let product = viewModel.getProduct(at: indexPath) {
+        if let product = viewModel.getProduct(at: indexPath) as? TShirt {
             let photoSize = CGSize(width: width, height: product.mainImageHeight)
             let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
             let rect = AVMakeRect(aspectRatio: photoSize, insideRect: boundingRect)
@@ -105,15 +101,9 @@ extension MainViewController: PinterestLayoutDelegate {
     }
     
     func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
-        if let product = viewModel.getProduct(at: indexPath) {
-//            let captionFont = UIFont.systemFont(ofSize: 15)
-//            let captionHeight = self.height(for: post.caption!, with: captionFont, width: width)
-//            let profileImageHeight = CGFloat(36)
-//            let height = topPadding + captionHeight + topPadding + profileImageHeight + bottomPadding
-
-            //return height
+        if let product = viewModel.getProduct(at: indexPath) as? TShirt {
+            return product.totalItemsHeight
         }
-        
-        return 200.0
+        return 0.0
     }
 }

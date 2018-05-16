@@ -23,6 +23,10 @@ class HomeViewModel: HomeViewModelType {
     private var activityIndicator: ActivityIndicator!
     private var products: Variable<[Product]>!
     private let disposeBag: DisposeBag!
+    private struct CollectionViewSettings {
+        static let padding8: CGFloat = 8.0
+        static let padding16: CGFloat = 16.0
+    }
     
     // MARK: Methods
     /// Constructor
@@ -68,12 +72,35 @@ class HomeViewModel: HomeViewModelType {
             .fetchProduct()
             .timeout(30, scheduler: MainScheduler.instance)
             .trackActivity(activityIndicator)
-            .subscribe(onNext: { [weak self] (products) in
+            .subscribe(onNext: { [weak self] (tempProducts) in
                 guard let strongSelf = self else { return }
+                var products: [Product] = [Product]()
+                let cellPadding: CGFloat  = 5.0
+                let columnWidth = Constant.CollectionView.Home.contentWidth / Constant.CollectionView.Home.numberOfColumns
+                let width = columnWidth - cellPadding * 2
+                let productPriceHeight: CGFloat = 25.0
+                let productReviewImageHeight: CGFloat = 20.0
+                let productStoreAddressheight: CGFloat = 18.0
+                for product in tempProducts {
+                    if let tshirt = product as? TShirt {
+                        let tshirtViewModel = TShirtViewModel(tshirt: tshirt)
+                        let productTitleHeight = Helper.height(for: tshirtViewModel.nameText, with: Constant.Font.AvenirNextMedium15, width: width)
+                        var productDiscountedPriceHeight: CGFloat = 0.0
+                        if !tshirtViewModel.productIsNotDiscounted() {
+                            productDiscountedPriceHeight = 18.0
+                        }
+                        tshirt.totalItemsHeight = productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight
+                        products.append(tshirt)
+                    }
+                }
                 strongSelf.setProducts(products: products)
                 }, onError: { (error) in
                     print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
+        //            let captionFont = UIFont.systemFont(ofSize: 15)
+        //            let captionHeight = self.height(for: post.caption!, with: captionFont, width: width)
+        //            let profileImageHeight = CGFloat(36)
+        //            let height = topPadding + captionHeight + topPadding + profileImageHeight + bottomPadding
     }
 }

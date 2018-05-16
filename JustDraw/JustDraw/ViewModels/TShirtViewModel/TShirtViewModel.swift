@@ -9,7 +9,7 @@
 import Foundation
 import iso4217
 
-class TShirtViewModel {
+class TShirtViewModel: Product {
     
     // MARK: Properties
     private var tshirt: TShirt
@@ -24,11 +24,17 @@ class TShirtViewModel {
     }
     
     var discountPriceText: String {
+        if productIsNotDiscounted() {
+            return ""
+        }
         let discountPrice = Price(value: tshirt.price * (1 - (Double(tshirt.discount) / 100.0)), currency: .vnd)
         return "\(discountPrice)"
     }
     
     var discountInfoText: String {
+        if productIsNotDiscounted() {
+            return ""
+        }
         return "-\(tshirt.discount)%"
     }
     
@@ -48,5 +54,10 @@ class TShirtViewModel {
     // MARK: Constructor
     init(tshirt: TShirt) {
         self.tshirt = tshirt
+    }
+    
+    // MARK: Methods
+    func productIsNotDiscounted() -> Bool {
+        return tshirt.discount == 0 ? true : false
     }
 }

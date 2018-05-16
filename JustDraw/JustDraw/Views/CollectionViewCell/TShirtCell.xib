@@ -25,7 +25,7 @@
                             <constraint firstAttribute="height" constant="200" id="Ycb-sU-Km0"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ 2 áo thun nam body kẻ ngang cao cấp" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMI-qd-FRh">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bộ 2 áo thun nam body kẻ ngang cao cấp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMI-qd-FRh">
                         <rect key="frame" x="4" y="208" width="227" height="41"/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                         <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,6 +70,7 @@
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="rJG-PP-PAp" firstAttribute="top" secondItem="Kqa-xZ-qPD" secondAttribute="bottom" constant="16" id="0E5-SO-ZMf"/>
                 <constraint firstItem="sa4-g2-Bom" firstAttribute="leading" secondItem="yMI-qd-FRh" secondAttribute="leading" id="2pD-xz-CPX"/>
