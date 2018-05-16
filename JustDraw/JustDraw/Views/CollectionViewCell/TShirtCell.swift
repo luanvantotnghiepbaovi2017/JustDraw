@@ -54,5 +54,7 @@ class TShirtCell: UICollectionViewCell {
         labelProductDiscountInfo.text = tshirtViewModel.discountInfoText
         labelProductReviewCount.text = tshirtViewModel.reviewText
         labelProductStoreAddress.text = tshirtViewModel.storeAddressText
+        imageViewProduct.kf.indicatorType = .activity
+        imageViewProduct.kf.setImage(with: tshirtViewModel.productImage)
     }
 }
