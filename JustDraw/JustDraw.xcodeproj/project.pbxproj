@@ -31,6 +31,7 @@
 		395CE1A320986EB4004B5212 /* NRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19A20986EB4004B5212 /* NRError.swift */; };
 		395CE1A420986EB4004B5212 /* NRStorageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE19B20986EB4004B5212 /* NRStorageRequest.swift */; };
 		395CE1A7209870E5004B5212 /* FirebaseEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */; };
+		3975B31D20AB548C00DC6916 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3975B31C20AB548C00DC6916 /* Helper.swift */; };
 		399B809520A6E1DB00EE747F /* TShirtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399B809420A6E1DB00EE747F /* TShirtViewModel.swift */; };
 		39E4098E209E139600FE2F13 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4098D209E139600FE2F13 /* PinterestLayout.swift */; };
 		39E40991209EE9E300FE2F13 /* TShirtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4098F209EE9E300FE2F13 /* TShirtCell.swift */; };
@@ -92,6 +93,7 @@
 		395CE19A20986EB4004B5212 /* NRError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRError.swift; sourceTree = "<group>"; };
 		395CE19B20986EB4004B5212 /* NRStorageRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRStorageRequest.swift; sourceTree = "<group>"; };
 		395CE1A6209870E5004B5212 /* FirebaseEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndPoint.swift; sourceTree = "<group>"; };
+		3975B31C20AB548C00DC6916 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		399B809420A6E1DB00EE747F /* TShirtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtViewModel.swift; sourceTree = "<group>"; };
 		39E4098D209E139600FE2F13 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		39E4098F209EE9E300FE2F13 /* TShirtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TShirtCell.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				39E40997209F024600FE2F13 /* Extensions */,
 				395CE17B20986440004B5212 /* Constant */,
 				395CE16C20985F4E004B5212 /* Resources */,
+				3975B31B20AB545B00DC6916 /* Helper */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -407,6 +410,14 @@
 				39E811312098B8BB00C2B9C5 /* RequestManager.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		3975B31B20AB545B00DC6916 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3975B31C20AB548C00DC6916 /* Helper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		39E4098C209E135E00FE2F13 /* CustomViews */ = {
@@ -733,6 +744,7 @@
 				395CE1A120986EB4004B5212 /* NRDatabaseResponse.swift in Sources */,
 				395CE17820986116004B5212 /* MainViewController.swift in Sources */,
 				395CE1A020986EB4004B5212 /* NRDatabaseProvider.swift in Sources */,
+				3975B31D20AB548C00DC6916 /* Helper.swift in Sources */,
 				395CE17D2098644D004B5212 /* Constant.swift in Sources */,
 				395CE19C20986EB4004B5212 /* NRStorageProvider.swift in Sources */,
 			);
@@ -912,7 +924,10 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -929,7 +944,10 @@
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDraw/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDraw;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -946,7 +964,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -964,7 +986,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -981,7 +1007,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -998,7 +1028,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4395L5MX45;
 				INFOPLIST_FILE = JustDrawUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tranquocbao.ios.project.JustDrawUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

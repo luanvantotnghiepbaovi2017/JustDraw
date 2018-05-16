@@ -50,7 +50,6 @@ class PinterestLayout: UICollectionViewLayout {
                 let photoHeight: CGFloat = (delegate?.collectionView(collectionView: collectionView!, heightForPhotoAt: indexPath, with: width))!
                 let captionHeight: CGFloat = (delegate?.collectionView(collectionView: collectionView!, heightForCaptionAt: indexPath, with: width))!
                 
-                
                 let height: CGFloat = cellPadding + photoHeight + captionHeight + cellPadding
                 let frame = CGRect(x: xOffsets[column], y: yOffsets[column], width: columnWidth, height: height)
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
@@ -79,7 +78,6 @@ class PinterestLayout: UICollectionViewLayout {
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
-        
         for attributes in attributesCache {
             if attributes.frame.intersects(rect) {
                 layoutAttributes.append(attributes)

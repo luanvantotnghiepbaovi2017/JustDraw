@@ -40,6 +40,11 @@ class TShirtViewModel {
         return tshirt.storeAddress
     }
     
+    var productImage: URL? {
+        guard let imageURL = URL(string: tshirt.mainImage) else { return nil }
+        return imageURL
+    }
+    
     // MARK: Constructor
     init(tshirt: TShirt) {
         self.tshirt = tshirt
