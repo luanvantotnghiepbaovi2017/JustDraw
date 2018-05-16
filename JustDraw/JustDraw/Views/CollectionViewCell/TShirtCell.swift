@@ -19,6 +19,8 @@ class TShirtCell: UICollectionViewCell {
     @IBOutlet weak var imageViewProductStarReview: UIImageView!
     @IBOutlet weak var labelProductReviewCount: UILabel!
     @IBOutlet weak var labelProductStoreAddress: UILabel!
+    // MARK: IBOutlets - NSLayoutConstraint
+    @IBOutlet weak var heightConstraintImageViewProduct: NSLayoutConstraint!
     
     // MARK: IBActions
     
@@ -33,6 +35,15 @@ class TShirtCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+    }
+    
+    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes)
+    {
+        super.apply(layoutAttributes)
+        if let attributes = layoutAttributes as? PinterestLayoutAttributes {
+            // - change the image height
+            heightConstraintImageViewProduct.constant = attributes.photoHeight
+        }
     }
     
     private func _configureCell() {

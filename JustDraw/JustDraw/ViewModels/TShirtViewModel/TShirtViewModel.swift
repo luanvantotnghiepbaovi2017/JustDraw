@@ -51,6 +51,10 @@ class TShirtViewModel: Product {
         return imageURL
     }
     
+    var productMainImageHeight: CGFloat {
+        return tshirt.mainImageHeight
+    }
+    
     // MARK: Constructor
     init(tshirt: TShirt) {
         self.tshirt = tshirt
