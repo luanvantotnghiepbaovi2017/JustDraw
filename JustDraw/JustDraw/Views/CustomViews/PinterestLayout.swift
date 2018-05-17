@@ -8,18 +8,19 @@
 
 import UIKit
 
-protocol PinterestLayoutDelegate: class {
+protocol PinterestLayoutDelegate: class
+{
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
     
-    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat
+    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath:IndexPath, with width: CGFloat) -> CGFloat
 }
 
-class PinterestLayout: UICollectionViewLayout {
-    // MARK: Properties
+class PinterestLayout: UICollectionViewLayout
+{
     var delegate: PinterestLayoutDelegate?
     
-    var numberOfColumns: CGFloat = Constant.CollectionView.Home.numberOfColumns
-    var cellPadding: CGFloat  = 5.0
+    var numberOfColumns: CGFloat = 2
+    var cellPadding: CGFloat = 5.0
     
     private var contentHeight: CGFloat = 0.0
     private var contentWidth: CGFloat {
@@ -27,22 +28,21 @@ class PinterestLayout: UICollectionViewLayout {
         return (collectionView!.bounds.width - (insets.left + insets.right))
     }
     
-    private var attributesCache = [UICollectionViewLayoutAttributes]()
+    private var attributesCache = [PinterestLayoutAttributes]()
     
-    // MARK: Methods
-    override func prepare() {
+    override func prepare()
+    {
         if attributesCache.isEmpty {
-            Constant.CollectionView.Home.contentWidth = contentWidth
             let columnWidth = contentWidth / numberOfColumns
             var xOffsets = [CGFloat]()
-            for column in 0..<Int(numberOfColumns) {
+            for column in 0 ..< Int(numberOfColumns) {
                 xOffsets.append(CGFloat(column) * columnWidth)
             }
             
             var column = 0
             var yOffsets = [CGFloat](repeating: 0, count: Int(numberOfColumns))
             
-            for item in 0..<collectionView!.numberOfItems(inSection: 0) {
+            for item in 0 ..< collectionView!.numberOfItems(inSection: 0) {
                 let indexPath = IndexPath(item: item, section: 0)
                 
                 // calculate the frame
@@ -78,8 +78,10 @@ class PinterestLayout: UICollectionViewLayout {
         return CGSize(width: contentWidth, height: contentHeight)
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?
+    {
         var layoutAttributes = [UICollectionViewLayoutAttributes]()
+        
         for attributes in attributesCache {
             if attributes.frame.intersects(rect) {
                 layoutAttributes.append(attributes)
@@ -89,6 +91,8 @@ class PinterestLayout: UICollectionViewLayout {
         return layoutAttributes
     }
 }
+// UICollectionViewFlowLayout
+// abstract
 
 class PinterestLayoutAttributes: UICollectionViewLayoutAttributes
 {

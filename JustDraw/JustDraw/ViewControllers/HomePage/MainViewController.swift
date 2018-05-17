@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
     private func _setUpCollectionViewLayout() {
         collectionViewProducts.dataSource = self
         //        collectionViewProducts.delegate = self
-        collectionViewProducts.contentInset = UIEdgeInsetsMake(12, 4, 12, 4)
+        collectionViewProducts.contentInset = UIEdgeInsetsMake(6, 5, 6, 5)
         if let layout = collectionViewProducts.collectionViewLayout as? PinterestLayout {
             layout.delegate = self
         }
