@@ -89,7 +89,7 @@ class HomeViewModel: HomeViewModelType {
                         if !tshirtViewModel.productIsNotDiscounted() {
                             productDiscountedPriceHeight = 18.0
                         }
-                        tshirt.totalItemsHeight = productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight
+                        tshirt.totalItemsHeight = CollectionViewSettings.padding8 + productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight
                         products.append(tshirt)
                     }
                 }
@@ -98,9 +98,5 @@ class HomeViewModel: HomeViewModelType {
                     print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
-        //            let captionFont = UIFont.systemFont(ofSize: 15)
-        //            let captionHeight = self.height(for: post.caption!, with: captionFont, width: width)
-        //            let profileImageHeight = CGFloat(36)
-        //            let height = topPadding + captionHeight + topPadding + profileImageHeight + bottomPadding
     }
 }

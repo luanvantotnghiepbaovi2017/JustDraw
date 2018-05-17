@@ -15,6 +15,7 @@ class Product {
     var vietnamName: String = ""
     var mainImage: String = ""
     var mainImageHeight: CGFloat = 0.0
+    var mainImageWidth: CGFloat = 0.0
     var price: Double = 0.0
     var quantity: Int = 0
     var review: Int = 0

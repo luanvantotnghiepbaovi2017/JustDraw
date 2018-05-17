@@ -20,6 +20,7 @@ class TShirt: Product, Decodable {
         case vietnamName = "VietNamName"
         case mainImage = "MainImage"
         case mainImageHeight = "MainImageHeight"
+        case mainImageWidth = "MainImageWidth"
         case price = "Price"
         case quantity = "Quantity"
         case review = "Review"
@@ -38,6 +39,7 @@ class TShirt: Product, Decodable {
         vietnamName = try container.decodeIfPresent(String.self, forKey: .vietnamName) ?? ""
         mainImage = try container.decodeIfPresent(String.self, forKey: .mainImage) ?? ""
         mainImageHeight = try container.decodeIfPresent(CGFloat.self, forKey: .mainImageHeight) ?? 0.0
+        mainImageWidth = try container.decodeIfPresent(CGFloat.self, forKey: .mainImageWidth) ?? 0.0
         price = try container.decodeIfPresent(Double.self, forKey: .price) ?? 0.0
         quantity = try container.decodeIfPresent(Int.self, forKey: .quantity) ?? 0
         review = try container.decodeIfPresent(Int.self, forKey: .review) ?? 0

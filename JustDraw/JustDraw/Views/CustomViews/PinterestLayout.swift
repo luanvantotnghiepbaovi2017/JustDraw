@@ -56,7 +56,8 @@ class PinterestLayout: UICollectionViewLayout {
                 let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
                 
                 // create layout attributes
-                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+                let attributes = PinterestLayoutAttributes(forCellWith: indexPath)
+                attributes.photoHeight = photoHeight
                 attributes.frame = insetFrame
                 attributesCache.append(attributes)
                 

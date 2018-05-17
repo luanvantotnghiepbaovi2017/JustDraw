@@ -92,7 +92,7 @@ extension MainViewController: UICollectionViewDataSource {
 extension MainViewController: PinterestLayoutDelegate {
     func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
         if let product = viewModel.getProduct(at: indexPath) as? TShirt {
-            let photoSize = CGSize(width: width, height: product.mainImageHeight)
+            let photoSize = CGSize(width: product.mainImageWidth, height: product.mainImageHeight)
             let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
             let rect = AVMakeRect(aspectRatio: photoSize, insideRect: boundingRect)
             return rect.size.height
