@@ -11,7 +11,7 @@ import UIKit
 class TShirt: Product, Decodable {
     
     // MARK: Properties
-    var totalItemsHeight: CGFloat = 0.0
+    var textHeight: CGFloat = 0.0
     
     // MARK: CodingKeys
     enum CodingKeys: String, CodingKey {

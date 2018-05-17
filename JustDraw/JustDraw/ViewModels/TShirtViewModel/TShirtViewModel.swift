@@ -55,6 +55,10 @@ class TShirtViewModel: Product {
         return tshirt.mainImageHeight
     }
     
+    var textHeight: CGFloat {
+        return tshirt.textHeight
+    }
+    
     // MARK: Constructor
     init(tshirt: TShirt) {
         self.tshirt = tshirt

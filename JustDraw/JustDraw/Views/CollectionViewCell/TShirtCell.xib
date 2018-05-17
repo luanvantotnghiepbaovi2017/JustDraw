@@ -108,7 +108,7 @@
                 <constraint firstItem="YOD-Fg-VPn" firstAttribute="leading" secondItem="rJG-PP-PAp" secondAttribute="trailing" constant="4" id="rmj-0D-RRU"/>
                 <constraint firstItem="Kqa-xZ-qPD" firstAttribute="top" secondItem="sa4-g2-Bom" secondAttribute="bottom" constant="8" id="yNh-2a-TVR"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <viewLayoutGuide key="safeArea" id="JI7-Ia-ZHY"/>
             <size key="customSize" width="235" height="379"/>
             <connections>
                 <outlet property="heightConstraintImageViewProduct" destination="Ycb-sU-Km0" id="N6s-qK-jZa"/>

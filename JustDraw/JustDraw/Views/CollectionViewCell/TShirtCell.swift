@@ -38,15 +38,6 @@ class TShirtCell: UICollectionViewCell {
         
     }
     
-    override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes)
-    {
-        super.apply(layoutAttributes)
-        if let attributes = layoutAttributes as? PinterestLayoutAttributes {
-            // - change the image height
-            heightConstraintImageViewProduct.constant = attributes.photoHeight
-        }
-    }
-    
     private func _configureCell() {
         labelProductName.text = tshirtViewModel.nameText
         labelProductPrice.text = tshirtViewModel.priceText

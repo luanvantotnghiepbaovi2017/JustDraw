@@ -13,7 +13,7 @@ class Helper {
     class func height(`for` text: String, `with` font: UIFont, width: CGFloat) -> CGFloat
     {
         let nsstring = NSString(string: text)
-        let maxHeight = CGFloat(64.0)
+        let maxHeight = CGFloat(100000.0)
         let textAttributes = [NSAttributedStringKey.font : font]
         let boundingRect = nsstring.boundingRect(with: CGSize(width: width, height: maxHeight), options: .usesLineFragmentOrigin, attributes: textAttributes, context: nil)
         return ceil(boundingRect.height)

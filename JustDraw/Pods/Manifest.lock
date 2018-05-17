@@ -87,6 +87,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
   - SnapKit (4.0.0)
+  - WaterfallLayout (0.1)
   - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
@@ -111,6 +112,7 @@ DEPENDENCIES:
   - RxDataSources
   - RxSwift
   - SnapKit
+  - WaterfallLayout (~> 0.1)
   - youtube-ios-player-helper
 
 SPEC REPOS:
@@ -149,6 +151,7 @@ SPEC REPOS:
     - RxDataSources
     - RxSwift
     - SnapKit
+    - WaterfallLayout
     - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
@@ -186,8 +189,9 @@ SPEC CHECKSUMS:
   RxDataSources: cb7c31e652a87ebb919da45f716bbb87b3765f6b
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  WaterfallLayout: 44cdae408089e6459b0ac39b327dd4030d546f09
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: e06dff5afe0b903036ff0a417c447efe510e5295
+PODFILE CHECKSUM: 566028f3cb8bf713632333d46efcc988c15fc5e7
 
 COCOAPODS: 1.5.0
