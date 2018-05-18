@@ -10,7 +10,8 @@ import UIKit
 import RxSwift
 import RxCocoa
 import PKHUD
-import WaterfallLayout
+import AVKit
+import AVFoundation
 
 class MainViewController: UIViewController {
     
@@ -28,19 +29,22 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         viewModel = HomeViewModel()
         _registerCell()
+        _setUpCollectionViewLayout()
         _bindingDataToCollectionView()
     }
     
+    private func _setUpCollectionViewLayout() {
+        collectionViewProducts.dataSource = self
+        //        collectionViewProducts.delegate = self
+        collectionViewProducts.contentInset = UIEdgeInsetsMake(6, 5, 6, 5)
+        if let layout = collectionViewProducts.collectionViewLayout as? PinterestLayout {
+            layout.delegate = self
+        }
+    }
+    
     private func _registerCell() {
-        let layout = WaterfallLayout()
-        layout.delegate = self
-        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.minimumLineSpacing = 0.0
-        layout.minimumInteritemSpacing = 0.0
-        collectionViewProducts.collectionViewLayout = layout
         let tshirtCell = UINib(nibName: TShirtCell.nibName, bundle: nil)
         collectionViewProducts.register(tshirtCell, forCellWithReuseIdentifier: TShirtCell.nibName)
-        collectionViewProducts.dataSource = self
     }
     
     private func _bindingDataToCollectionView() {
@@ -84,17 +88,22 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: Extension - WaterfallLayoutDelegate
-extension MainViewController: WaterfallLayoutDelegate {
-    func collectionViewLayout(for section: Int) -> WaterfallLayout.Layout {
-        return .waterfall(column: 2)
+// MARK: Extension - PinterestLayoutDelegate
+extension MainViewController: PinterestLayoutDelegate {
+    func collectionView(collectionView: UICollectionView, heightForPhotoAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
+        if let product = viewModel.getProduct(at: indexPath) as? TShirt {
+            let photoSize = CGSize(width: product.mainImageWidth, height: product.mainImageHeight)
+            let boundingRect = CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+            let rect = AVMakeRect(aspectRatio: photoSize, insideRect: boundingRect)
+            return rect.size.height
+        }
+        return 0.0
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout: WaterfallLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        guard let tshirt = viewModel.getProduct(at: indexPath) as? TShirt else { return CGSize(width: 0, height: 0) }
-        let tshirtViewModel = TShirtViewModel(tshirt: tshirt)
-        let itemHeight = tshirtViewModel.productMainImageHeight + tshirtViewModel.textHeight
-        let itemWidth = (collectionView.bounds.width - (5.0 * 2)) / 2.0
-        return CGSize(width: itemWidth, height: itemHeight)
+    func collectionView(collectionView: UICollectionView, heightForCaptionAt indexPath: IndexPath, with width: CGFloat) -> CGFloat {
+        if let product = viewModel.getProduct(at: indexPath) as? TShirt {
+            return product.totalItemsHeight
+        }
+        return 0.0
     }
 }
