@@ -89,7 +89,7 @@ class HomeViewModel: HomeViewModelType {
                         if !tshirtViewModel.productIsNotDiscounted() {
                             productDiscountedPriceHeight = 18.0
                         }
-                        tshirt.totalItemsHeight = CollectionViewSettings.padding8 + productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight + CollectionViewSettings.padding16 * 3
+                        tshirt.totalItemsHeight = CollectionViewSettings.padding8 + productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight
                         products.append(tshirt)
                     }
                 }

@@ -25,7 +25,8 @@ class PinterestLayout: UICollectionViewLayout
     private var contentHeight: CGFloat = 0.0
     private var contentWidth: CGFloat {
         let insets = collectionView!.contentInset
-        return (collectionView!.bounds.width - (insets.left + insets.right))
+        Constant.CollectionView.Home.contentWidth = (collectionView!.bounds.width - (insets.left + insets.right))
+        return Constant.CollectionView.Home.contentWidth
     }
     
     private var attributesCache = [PinterestLayoutAttributes]()
