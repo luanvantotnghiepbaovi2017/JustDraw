@@ -76,6 +76,7 @@ class HomeViewModel: HomeViewModelType {
                 guard let strongSelf = self else { return }
                 var products: [Product] = [Product]()
                 let cellPadding: CGFloat  = 5.0
+                let productTitlePadding: CGFloat = 4.0 * 2
                 let columnWidth = Constant.CollectionView.Home.contentWidth / Constant.CollectionView.Home.numberOfColumns
                 let width = columnWidth - cellPadding * 2
                 let productPriceHeight: CGFloat = 25.0
@@ -84,12 +85,12 @@ class HomeViewModel: HomeViewModelType {
                 for product in tempProducts {
                     if let tshirt = product as? TShirt {
                         let tshirtViewModel = TShirtViewModel(tshirt: tshirt)
-                        let productTitleHeight = Helper.height(for: tshirtViewModel.nameText, with: Constant.Font.AvenirNextMedium15, width: width)
+                        let productTitleHeight = Helper.height(for: tshirtViewModel.nameText, with: Constant.Font.AvenirNextMedium15, width: width - productTitlePadding)
                         var productDiscountedPriceHeight: CGFloat = 0.0
                         if !tshirtViewModel.productIsNotDiscounted() {
                             productDiscountedPriceHeight = 18.0
                         }
-                        tshirt.totalItemsHeight = CollectionViewSettings.padding8 + productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight
+                        tshirt.totalItemsHeight = CollectionViewSettings.padding8 + productTitleHeight + CollectionViewSettings.padding8 + productPriceHeight + CollectionViewSettings.padding8 + productDiscountedPriceHeight + CollectionViewSettings.padding16 + productReviewImageHeight + CollectionViewSettings.padding8 + productStoreAddressheight + CollectionViewSettings.padding8
                         products.append(tshirt)
                     }
                 }
