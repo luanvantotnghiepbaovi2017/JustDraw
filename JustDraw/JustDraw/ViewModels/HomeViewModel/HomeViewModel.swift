@@ -76,16 +76,17 @@ class HomeViewModel: HomeViewModelType {
                 guard let strongSelf = self else { return }
                 var products: [Product] = [Product]()
                 let cellPadding: CGFloat  = 5.0
-                let productTitlePadding: CGFloat = 4.0 * 2
                 let columnWidth = Constant.CollectionView.Home.contentWidth / Constant.CollectionView.Home.numberOfColumns
                 let width = columnWidth - cellPadding * 2
+                let productTitlePadding: CGFloat = 4.0 * 2
+                let productTitleWidth: CGFloat = width - productTitlePadding
                 let productPriceHeight: CGFloat = 25.0
                 let productReviewImageHeight: CGFloat = 20.0
                 let productStoreAddressheight: CGFloat = 18.0
                 for product in tempProducts {
                     if let tshirt = product as? TShirt {
                         let tshirtViewModel = TShirtViewModel(tshirt: tshirt)
-                        let productTitleHeight = Helper.height(for: tshirtViewModel.nameText, with: Constant.Font.AvenirNextMedium15, width: width - productTitlePadding)
+                        let productTitleHeight = Helper.height(for: tshirtViewModel.nameText, with: Constant.Font.AvenirNextMedium15, width: productTitleWidth)
                         var productDiscountedPriceHeight: CGFloat = 0.0
                         if !tshirtViewModel.productIsNotDiscounted() {
                             productDiscountedPriceHeight = 18.0

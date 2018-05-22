@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 class TShirtCell: UICollectionViewCell {
-
+    
     // MARK: IBOutlets
     @IBOutlet weak var imageViewProduct: UIImageView!
     @IBOutlet weak var labelProductName: UILabel!

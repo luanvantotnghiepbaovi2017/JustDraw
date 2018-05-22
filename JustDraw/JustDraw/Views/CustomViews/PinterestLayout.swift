@@ -17,20 +17,19 @@ protocol PinterestLayoutDelegate: class
 
 class PinterestLayout: UICollectionViewLayout
 {
+    // MARK: Properties
     var delegate: PinterestLayoutDelegate?
-    
     var numberOfColumns: CGFloat = 2
     var cellPadding: CGFloat = 5.0
-    
     private var contentHeight: CGFloat = 0.0
     private var contentWidth: CGFloat {
         let insets = collectionView!.contentInset
         Constant.CollectionView.Home.contentWidth = (collectionView!.bounds.width - (insets.left + insets.right))
         return Constant.CollectionView.Home.contentWidth
     }
-    
     private var attributesCache = [PinterestLayoutAttributes]()
     
+    // MARK: Methods
     override func prepare()
     {
         if attributesCache.isEmpty {
@@ -92,13 +91,13 @@ class PinterestLayout: UICollectionViewLayout
         return layoutAttributes
     }
 }
-// UICollectionViewFlowLayout
-// abstract
 
 class PinterestLayoutAttributes: UICollectionViewLayoutAttributes
 {
+    // MARK: Properties
     var photoHeight: CGFloat = 0.0
     
+    // MARK: Methods
     override func copy(with zone: NSZone? = nil) -> Any {
         let copy = super.copy(with: zone) as! PinterestLayoutAttributes
         copy.photoHeight = photoHeight
