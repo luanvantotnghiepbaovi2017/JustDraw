@@ -11,10 +11,10 @@ import RxSwift
 
 protocol HomeViewModelType: class {
     var isLoading: Observable<Bool> { get }
-    func getProducts() -> Variable<[Product]>
+    func getProducts() -> [Product]
     func getCountOfProducts() -> Int
-    func setProducts(products: [Product])
     func getProduct(at indexPath: IndexPath) -> Product?
+    func setProducts(products: [Product])
 }
 
 class HomeViewModel: HomeViewModelType {
@@ -39,8 +39,8 @@ class HomeViewModel: HomeViewModelType {
     }
     
     /// Get Methods
-    func getProducts() -> Variable<[Product]> {
-        return products
+    func getProducts() -> [Product] {
+        return products.value
     }
     
     func getProduct(at indexPath: IndexPath) -> Product? {

@@ -20,18 +20,24 @@ extension RequestManager {
             self?.database.request(.getProduct()) { result in
                 switch result {
                 case .success(let response):
-                    guard let snapshot = response.snapshot else { return observer.onNext([]) }
-                    guard let value = snapshot.value as? [String: Any] else { return observer.onNext([]) }
-                    do {
-                        var products: [Product] = [Product]()
-                        for item in value {
-                            let jsonData = try JSONSerialization.data(withJSONObject: item.value, options: [])
-                            let tshirt = try JSONDecoder().decode(TShirt.self, from: jsonData)
-                            products.append(tshirt)
+                    if let snapshot = response.snapshot {
+                        if let value = snapshot.value as? [String: Any] {
+                            do {
+                                var products: [Product] = [Product]()
+                                for item in value {
+                                    let jsonData = try JSONSerialization.data(withJSONObject: item.value, options: [])
+                                    let tshirt = try JSONDecoder().decode(TShirt.self, from: jsonData)
+                                    products.append(tshirt)
+                                }
+                                observer.onNext(products)
+                            } catch let error {
+                                observer.onError(error)
+                            }
+                        } else {
+                            observer.onNext([])
                         }
-                        observer.onNext(products)
-                    } catch let error {
-                        observer.onError(error)
+                    } else {
+                        observer.onNext([])
                     }
                 case .failure(let error):
                     observer.onError(error)
